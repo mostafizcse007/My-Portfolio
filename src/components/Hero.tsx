@@ -122,7 +122,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.4
-        }} className="flex items-center justify-center gap-4">
+        }} className="flex-row flex items-end justify-center gap-[17px] mx-0 px-0">
             {socialLinks.map(link => <motion.a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all" whileHover={{
             scale: 1.1,
             y: -3
