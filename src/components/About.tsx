@@ -33,7 +33,7 @@ const About = () => {
           About Me
         </motion.h2>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-2 flex justify-center lg:justify-end"
+            className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-8"
           >
             <div className="relative group">
               <div className="relative w-64 h-64 md:w-72 md:h-72">
