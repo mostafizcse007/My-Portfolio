@@ -30,7 +30,7 @@ const Navbar = () => {
           className="text-2xl font-display font-bold text-gradient"
           whileHover={{ scale: 1.05 }}
         >
-          MRA
+          Mostafizur Rahman Antu
         </motion.a>
 
         {/* Desktop Navigation */}
