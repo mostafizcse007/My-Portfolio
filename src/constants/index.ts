@@ -23,12 +23,12 @@ export const socialLinks = [
   {
     name: "Codeforces",
     url: "https://codeforces.com/profile/also_mostafiz",
-    icon: "code",
+    icon: "codeforces",
   },
   {
     name: "LeetCode",
     url: "https://leetcode.com/u/mostafizcse/",
-    icon: "code",
+    icon: "leetcode",
   },
 ];
 
