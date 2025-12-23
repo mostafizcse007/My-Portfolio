@@ -9,9 +9,6 @@ const categories = [{
   id: "ml",
   name: "Machine Learning"
 }, {
-  id: "web",
-  name: "Web Development"
-}, {
   id: "dsa",
   name: "DSA"
 }];
