@@ -33,20 +33,20 @@ const Loader = ({ onComplete }: { onComplete: () => void }) => {
             transition={{ duration: 1.5, ease: "easeInOut" }}
           />
           
-          {/* Letter A */}
+          {/* Name */}
           <motion.text
             x="50"
-            y="62"
+            y="58"
             textAnchor="middle"
             fill="currentColor"
-            fontSize="40"
+            fontSize="24"
             fontFamily="monospace"
             fontWeight="bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
           >
-            A
+            Antu
           </motion.text>
         </svg>
 
