@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Code, Trophy, Braces } from "lucide-react";
+import { Github, Linkedin, Code, Trophy, Braces, Terminal } from "lucide-react";
 import { personalInfo, socialLinks } from "@/constants";
 import profileImage from "@/assets/profile.jpg";
+import TypingAnimation from "./TypingAnimation";
 const Hero = () => {
   const iconMap: Record<string, React.ReactNode> = {
     github: <Github size={20} />,
@@ -55,10 +56,23 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary border border-border font-mono text-sm text-muted-foreground">
-              <span className="text-primary">$</span> ./welcome.sh --dev
-              <span className="w-2 h-4 bg-primary animate-pulse" />
-            </span>
+            <div className="inline-flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary border border-border font-mono text-sm">
+              <Terminal size={16} className="text-primary" />
+              <span className="text-muted-foreground">guest@portfolio:~$</span>
+              <TypingAnimation 
+                texts={[
+                  "python train_model.py",
+                  "npm run dev",
+                  "git push origin main",
+                  "docker-compose up",
+                  "./solve_problem --optimize"
+                ]}
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseDuration={2500}
+                className="text-foreground"
+              />
+            </div>
           </motion.div>
 
           <motion.h1 initial={{
