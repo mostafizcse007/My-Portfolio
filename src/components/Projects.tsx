@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { Github, Folder } from "lucide-react";
 import { projects } from "@/constants";
 const categories = [{
   id: "all",
@@ -98,13 +98,7 @@ const Projects = () => {
               }}>
                     <Github size={20} />
                   </motion.a>
-                  <motion.a href={project.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary text-foreground flex items-center justify-center" whileHover={{
-                scale: 1.1
-              }} whileTap={{
-                scale: 0.95
-              }}>
-                    <ExternalLink size={20} />
-                  </motion.a>
+                  
                 </div>
               </div>
 
