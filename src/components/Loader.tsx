@@ -17,17 +17,17 @@ const Loader = ({ onComplete }: { onComplete: () => void }) => {
       >
         {/* Logo Animation */}
         <svg
-          width="100"
+          width="280"
           height="100"
-          viewBox="0 0 100 100"
+          viewBox="0 0 280 100"
           className="text-primary"
         >
           {/* Hexagon outline */}
           <motion.polygon
-            points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+            points="140,5 235,27.5 235,72.5 140,95 45,72.5 45,27.5"
             fill="none"
             stroke="currentColor"
-            strokeWidth="4"
+            strokeWidth="3"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -35,16 +35,30 @@ const Loader = ({ onComplete }: { onComplete: () => void }) => {
           
           {/* Name */}
           <motion.text
-            x="50"
-            y="58"
+            x="140"
+            y="45"
             textAnchor="middle"
             fill="currentColor"
-            fontSize="24"
+            fontSize="14"
             fontFamily="monospace"
             fontWeight="bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
+          >
+            Mostafizur Rahman
+          </motion.text>
+          <motion.text
+            x="140"
+            y="65"
+            textAnchor="middle"
+            fill="currentColor"
+            fontSize="18"
+            fontFamily="monospace"
+            fontWeight="bold"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
           >
             Antu
           </motion.text>
