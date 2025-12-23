@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Code } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Code, Trophy, Braces } from "lucide-react";
 import { personalInfo, socialLinks } from "@/constants";
+import profileImage from "@/assets/profile.jpg";
 
 const Hero = () => {
   const iconMap: Record<string, React.ReactNode> = {
     github: <Github size={20} />,
     linkedin: <Linkedin size={20} />,
     code: <Code size={20} />,
+    codeforces: <Trophy size={20} />,
+    leetcode: <Braces size={20} />,
   };
 
   return (
@@ -31,10 +34,29 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Picture */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <div className="relative inline-block">
+              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl mx-auto">
+                <img 
+                  src={profileImage} 
+                  alt="Mostafiz - ML Engineer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none" />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6"
           >
             <span className="inline-block px-4 py-1.5 bg-secondary rounded-full text-sm text-primary font-body">

@@ -60,7 +60,21 @@ const Projects = () => {
         duration: 0.5,
         delay: 0.2
       }} className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map(category => {})}
+          {categories.map(category => (
+            <motion.button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-2 rounded-full font-body text-sm transition-all ${
+                activeCategory === category.id
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-muted-foreground hover:text-foreground"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {category.name}
+            </motion.button>
+          ))}
         </motion.div>
 
         {/* Projects Grid */}
