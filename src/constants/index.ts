@@ -106,7 +106,7 @@ export const projects = [
     title: "Krishisheba - Smart Agriculture",
     description:
       "AI-powered agricultural assistance platform providing disease detection, weather forecasts, and expert agricultural advice for farmers.",
-    tags: ["Python", "ML", "TensorFlow", "React"],
+    tags: ["Java", "Springboot"],
     category: "ml",
     github: "https://github.com/mostafizcse007/krishisheba",
     image: null,
