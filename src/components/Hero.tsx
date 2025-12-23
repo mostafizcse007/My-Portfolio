@@ -55,7 +55,10 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="mb-6">
-            
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary border border-border font-mono text-sm text-muted-foreground">
+              <span className="text-primary">$</span> ./welcome.sh --dev
+              <span className="w-2 h-4 bg-primary animate-pulse" />
+            </span>
           </motion.div>
 
           <motion.h1 initial={{
@@ -97,21 +100,21 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.3
         }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <motion.a href="#projects" className="px-8 py-4 bg-gradient-primary text-primary-foreground rounded-full font-body font-medium flex items-center gap-2" whileHover={{
+            <motion.a href="#projects" className="px-8 py-4 bg-gradient-primary text-primary-foreground rounded-full font-mono text-sm font-medium flex items-center gap-2" whileHover={{
             scale: 1.05,
-            boxShadow: "0 0 30px hsl(175 80% 50% / 0.4)"
+            boxShadow: "0 0 30px hsl(158 64% 40% / 0.4)"
           }} whileTap={{
             scale: 0.95
           }}>
-              View My Work
-              <ArrowDown size={18} />
+              <Code size={18} />
+              view_projects()
             </motion.a>
-            <motion.a href="#contact" className="px-8 py-4 border border-border text-foreground rounded-full font-body font-medium hover:bg-secondary transition-colors" whileHover={{
+            <motion.a href="#contact" className="px-8 py-4 border border-border text-foreground rounded-full font-mono text-sm font-medium hover:bg-secondary transition-colors" whileHover={{
             scale: 1.05
           }} whileTap={{
             scale: 0.95
           }}>
-              Get In Touch
+              contact()
             </motion.a>
           </motion.div>
 
