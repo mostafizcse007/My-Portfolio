@@ -1,114 +1,89 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { technologies } from "@/constants";
+import profileImage from "@/assets/profile.jpg";
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-100px"
-  });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const allTechs = [
-    ...technologies.languages.map(t => ({ ...t, category: "Languages" })),
-    ...technologies.mlAi.map(t => ({ ...t, category: "ML & AI" })),
-    ...technologies.tools.map(t => ({ ...t, category: "Tools" }))
+  const skills = [
+    "Python",
+    "C++",
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy",
+    "OpenCV",
+    "Git",
+    "Docker",
   ];
 
   return (
-    <section id="about" className="py-32 relative" ref={ref}>
-      {/* Background Accent */}
-      <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
+    <section id="about" className="py-24 lg:py-32" ref={ref}>
+      <div className="container mx-auto px-6 lg:px-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="section-heading"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary border border-border font-mono text-xs text-primary">
-            {"// about_me.py"}
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
-            My <span className="text-gradient">Journey</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto font-body text-lg leading-relaxed">
-            Passionate about leveraging technology to solve complex problems and create impactful solutions.
-          </p>
-        </motion.div>
+          <span className="numbered-heading">01.</span>
+          About Me
+        </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Personal Journey */}
+        <div className="grid lg:grid-cols-5 gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-8 rounded-2xl bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-glow"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-3 space-y-4"
           >
-            <h3 className="text-2xl font-display font-semibold mb-6">Personal Journey</h3>
-            <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              As a dedicated machine learning enthusiast and competitive programmer, I thrive on tackling 
-              challenging problems and developing innovative solutions. My journey in tech has been driven 
-              by curiosity and a passion for continuous learning.
+            <p className="text-muted-foreground leading-relaxed">
+              Hello! I'm Antu, a passionate developer with a deep interest in Machine Learning 
+              and Artificial Intelligence. My journey in tech started with competitive programming, 
+              which honed my problem-solving skills and algorithmic thinking.
             </p>
-            <p className="text-muted-foreground font-body leading-relaxed">
-              I specialize in building intelligent systems that can learn and adapt, combining theoretical 
-              knowledge with practical implementation skills to deliver real-world impact.
+            <p className="text-muted-foreground leading-relaxed">
+              I specialize in building intelligent systems that can learn and adapt, combining 
+              theoretical knowledge with practical implementation skills. I've solved 1000+ 
+              problems on platforms like Codeforces and LeetCode.
             </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-8">
-              {[
-                { value: "10+", label: "Projects" },
-                { value: "2+", label: "Years Exp" },
-                { value: "5+", label: "Technologies" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  className="text-center p-4 bg-secondary rounded-xl"
-                >
-                  <div className="text-2xl font-display font-bold text-primary">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
-                </motion.div>
+            <p className="text-muted-foreground leading-relaxed">
+              Currently, I'm focused on developing AI-powered solutions and contributing to 
+              open-source projects that make a real-world impact.
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed pt-4">
+              Here are a few technologies I've been working with recently:
+            </p>
+
+            <ul className="grid grid-cols-2 gap-2 pt-2">
+              {skills.map((skill) => (
+                <li key={skill} className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
+                  <span className="text-primary">▹</span>
+                  {skill}
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
 
-          {/* Technical Skills */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="p-8 rounded-2xl bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-glow"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="lg:col-span-2 flex justify-center lg:justify-end"
           >
-            <h3 className="text-2xl font-display font-semibold mb-6">Technical Skills</h3>
-            <div className="space-y-4">
-              {allTechs.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
-                >
-                  <div className="flex justify-between mb-2">
-                    <span className="font-body text-sm">{tech.name}</span>
-                    <span className="font-body text-xs text-muted-foreground">{tech.category}</span>
-                  </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-primary rounded-full"
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${tech.level}%` } : { width: 0 }}
-                      transition={{ duration: 1, delay: 0.5 + index * 0.05 }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
+            <div className="relative group">
+              <div className="relative w-64 h-64 md:w-72 md:h-72">
+                <img
+                  src={profileImage}
+                  alt="Profile"
+                  className="rounded w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <div className="absolute inset-0 border-2 border-primary rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />
+              </div>
             </div>
           </motion.div>
         </div>
