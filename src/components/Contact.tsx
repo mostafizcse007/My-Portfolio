@@ -132,7 +132,7 @@ const Contact = () => {
           duration: 0.6,
           delay: 0.2
         }} className="lg:col-span-2 space-y-8">
-            <div className="p-8 rounded-2xl space-y-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-glow">
+            <div className="p-8 rounded-2xl space-y-6 bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-glow">
               <h3 className="text-2xl font-display font-semibold">
                 Contact Information
               </h3>
@@ -171,7 +171,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-glow">
+            <div className="p-8 rounded-2xl bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-glow">
               <h3 className="text-lg font-display font-semibold mb-4">
                 Find Me Online
               </h3>
@@ -199,7 +199,7 @@ const Contact = () => {
           duration: 0.6,
           delay: 0.3
         }} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="p-8 rounded-2xl space-y-6 transition-all duration-300 hover:shadow-glow">
+            <form onSubmit={handleSubmit} className="p-8 rounded-2xl space-y-6 bg-card transition-all duration-300 hover:shadow-glow">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-body text-muted-foreground mb-2">
