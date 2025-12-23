@@ -21,7 +21,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4"
           >
-            {personalInfo.name}.
+            Mostafizur Rahman
+            <br />
+            <span className="text-primary">Antu</span>.
           </motion.h1>
 
           <motion.h2
