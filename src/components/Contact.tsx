@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Code, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Code, Trophy, Braces, CheckCircle, AlertCircle } from "lucide-react";
 import { personalInfo, socialLinks } from "@/constants";
 import { toast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
@@ -10,6 +10,8 @@ const iconMap: Record<string, React.ReactNode> = {
   github: <Github size={20} />,
   linkedin: <Linkedin size={20} />,
   code: <Code size={20} />,
+  codeforces: <Trophy size={20} />,
+  leetcode: <Braces size={20} />,
 };
 
 const Contact = () => {
