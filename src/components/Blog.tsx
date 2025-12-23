@@ -113,10 +113,6 @@ const Blog = () => {
                   <div className="flex items-center justify-between pt-4 border-t border-border/50">
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5" />
-                        {post.date}
-                      </span>
-                      <span className="flex items-center gap-1">
                         <Clock className="w-3.5 h-3.5" />
                         {post.readTime}
                       </span>
