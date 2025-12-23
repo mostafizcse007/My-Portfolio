@@ -17,17 +17,17 @@ export const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/mostafizurrahman007",
+    url: "https://linkedin.com/in/alsomostafiz",
     icon: "linkedin",
   },
   {
     name: "Codeforces",
-    url: "https://codeforces.com/profile/mostafizcse007",
+    url: "https://codeforces.com/profile/also_mostafiz",
     icon: "code",
   },
   {
     name: "LeetCode",
-    url: "https://leetcode.com/mostafizcse007",
+    url: "https://leetcode.com/u/mostafizcse/",
     icon: "code",
   },
 ];
