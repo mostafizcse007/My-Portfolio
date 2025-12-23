@@ -132,7 +132,7 @@ const Contact = () => {
           duration: 0.6,
           delay: 0.2
         }} className="lg:col-span-2 space-y-8">
-            <div className="glass p-8 rounded-2xl space-y-6 bg-primary-foreground">
+            <div className="p-8 rounded-2xl space-y-6">
               <h3 className="text-2xl font-display font-semibold">
                 Contact Information
               </h3>
@@ -144,7 +144,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Email</div>
-                    <div className="font-body text-foreground bg-primary-foreground">{personalInfo.email}</div>
+                    <div className="font-body text-foreground">{personalInfo.email}</div>
                   </div>
                 </a>
 
@@ -171,7 +171,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="glass p-8 rounded-2xl bg-primary-foreground">
+            <div className="p-8 rounded-2xl">
               <h3 className="text-lg font-display font-semibold mb-4">
                 Find Me Online
               </h3>
@@ -199,7 +199,7 @@ const Contact = () => {
           duration: 0.6,
           delay: 0.3
         }} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass p-8 rounded-2xl space-y-6 bg-primary-foreground">
+            <form onSubmit={handleSubmit} className="p-8 rounded-2xl space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-body text-muted-foreground mb-2">
@@ -221,8 +221,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-primary-foreground">
-                <label className="block text-sm font-body text-muted-foreground mb-2 bg-primary-foreground">
+              <div>
+                <label className="block text-sm font-body text-muted-foreground mb-2">
                   Your Message
                 </label>
                 <textarea required rows={6} value={formData.message} onChange={e => setFormData({
