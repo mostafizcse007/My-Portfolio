@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Code, Trophy, Braces, Terminal } from "lucide-react";
+import { Github, Linkedin, Code, Trophy, Braces, Terminal, FileText } from "lucide-react";
 import { personalInfo, socialLinks } from "@/constants";
 import profileImage from "@/assets/profile.jpg";
 import TypingAnimation from "./TypingAnimation";
@@ -129,6 +129,21 @@ const Hero = () => {
             scale: 0.95
           }}>
               contact()
+            </motion.a>
+            <motion.a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-secondary text-foreground rounded-full font-mono text-sm font-medium flex items-center gap-2 hover:bg-secondary/80 transition-colors" 
+              whileHover={{
+                scale: 1.05
+              }} 
+              whileTap={{
+                scale: 0.95
+              }}
+            >
+              <FileText size={18} />
+              view_resume()
             </motion.a>
           </motion.div>
 
