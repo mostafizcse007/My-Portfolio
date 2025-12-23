@@ -1,74 +1,113 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Brain, Puzzle, Globe, Users } from "lucide-react";
-import { services } from "@/constants";
-const iconMap: Record<string, React.ReactNode> = {
-  brain: <Brain size={32} />,
-  puzzle: <Puzzle size={32} />,
-  globe: <Globe size={32} />,
-  users: <Users size={32} />
-};
+import { useRef, useState } from "react";
+
 const Services = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-100px"
-  });
-  return <section id="services" className="py-32 relative" ref={ref}>
-      {/* Background Accent */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-y-1/2" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div initial={{
-        opacity: 0,
-        y: 50
-      }} animate={isInView ? {
-        opacity: 1,
-        y: 0
-      } : {}} transition={{
-        duration: 0.6
-      }} className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary border border-border font-mono text-xs text-primary">
-            {"// services.config"}
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
-            Services & <span className="text-gradient">Expertise</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto font-body text-lg leading-relaxed">
-            Leveraging my skills in machine learning, algorithms, and software development 
-            to deliver impactful solutions.
-          </p>
-        </motion.div>
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeTab, setActiveTab] = useState(0);
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => <motion.div key={service.title} initial={{
-          opacity: 0,
-          y: 50
-        }} animate={isInView ? {
-          opacity: 1,
-          y: 0
-        } : {}} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }} whileHover={{
-          y: -10,
-          transition: {
-            duration: 0.2
-          }
-        }} className="group p-8 rounded-2xl transition-all duration-300 bg-card hover:scale-[1.02] hover:shadow-glow">
-              <div className="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground mb-6 group-hover:shadow-glow transition-all duration-300">
-                {iconMap[service.icon]}
-              </div>
-              <h3 className="text-xl font-display font-semibold mb-3">
-                {service.title}
+  const experiences = [
+    {
+      company: "Machine Learning",
+      title: "ML Model Training",
+      description: [
+        "Building and training custom machine learning models tailored to specific needs",
+        "Working with TensorFlow, PyTorch, and Scikit-learn for various ML applications",
+        "Implementing deep learning architectures for computer vision and NLP tasks",
+        "Optimizing model performance through hyperparameter tuning and feature engineering",
+      ],
+    },
+    {
+      company: "Problem Solving",
+      title: "Competitive Programming",
+      description: [
+        "Solved 1000+ problems on competitive programming platforms",
+        "Expert in algorithms and data structures implementation in C++",
+        "Regular participant in Codeforces and LeetCode contests",
+        "Strong foundation in dynamic programming, graph algorithms, and optimization",
+      ],
+    },
+    {
+      company: "Mentoring",
+      title: "Project Guidance",
+      description: [
+        "Helping students and developers understand complex concepts",
+        "Guiding through project architecture and implementation",
+        "Code review and best practices mentorship",
+        "Career guidance in tech and AI/ML domains",
+      ],
+    },
+  ];
+
+  return (
+    <section id="services" className="py-24 lg:py-32" ref={ref}>
+      <div className="container mx-auto px-6 lg:px-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="section-heading max-w-2xl"
+        >
+          <span className="numbered-heading">02.</span>
+          What I Do
+        </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-col md:flex-row gap-8"
+        >
+          {/* Tabs */}
+          <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-muted">
+            {experiences.map((exp, index) => (
+              <button
+                key={exp.company}
+                onClick={() => setActiveTab(index)}
+                className={`px-5 py-3 font-mono text-sm whitespace-nowrap text-left transition-colors relative ${
+                  activeTab === index
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                }`}
+              >
+                {activeTab === index && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute left-0 top-0 bottom-0 w-0.5 md:w-0.5 bg-primary"
+                  />
+                )}
+                {exp.company}
+              </button>
+            ))}
+          </div>
+
+          {/* Content */}
+          <div className="min-h-[300px] flex-1">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-xl font-semibold text-foreground mb-1">
+                {experiences[activeTab].title}
+                <span className="text-primary"> @ {experiences[activeTab].company}</span>
               </h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>)}
-        </div>
+              <ul className="mt-6 space-y-4">
+                {experiences[activeTab].description.map((item, index) => (
+                  <li key={index} className="flex gap-3 text-muted-foreground text-sm leading-relaxed">
+                    <span className="text-primary mt-1.5">▹</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Services;
