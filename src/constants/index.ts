@@ -46,12 +46,6 @@ export const services = [
     icon: "puzzle",
   },
   {
-    title: "Web Development",
-    description:
-      "Creating modern, responsive web applications using React, Node.js, and other cutting-edge technologies.",
-    icon: "globe",
-  },
-  {
     title: "Project Mentoring",
     description: "Helping students and developers understand complex concepts and guiding them through their projects.",
     icon: "users",
