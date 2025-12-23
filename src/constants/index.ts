@@ -1,8 +1,9 @@
 export const personalInfo = {
   name: "Mostafizur Rahman Antu",
-  title: "Machine Learning Developer",
+  title: "AI/ML enthusiast",
   tagline: "Transforming Ideas into Intelligent Solutions",
-  description: "I'm a passionate developer specializing in Machine Learning and Software Engineering. I love solving complex problems using algorithms, data structures, and AI-driven solutions.",
+  description:
+    "I'm a passionate developer specializing in Machine Learning and Software Engineering. I love solving complex problems using algorithms, data structures, and AI-driven solutions.",
   email: "juniormostafiz@gmail.com",
   phone: "+880 1309462705",
   location: "Dhaka, Bangladesh",
@@ -34,17 +35,20 @@ export const socialLinks = [
 export const services = [
   {
     title: "ML Model Training",
-    description: "Building and training custom machine learning models tailored to your specific needs using TensorFlow, PyTorch, and Scikit-learn.",
+    description:
+      "Building and training custom machine learning models tailored to your specific needs using TensorFlow, PyTorch, and Scikit-learn.",
     icon: "brain",
   },
   {
     title: "Problem Solving",
-    description: "Expert problem solver with 1000+ solved problems on competitive programming platforms like Codeforces and LeetCode.",
+    description:
+      "Expert problem solver with 1000+ solved problems on competitive programming platforms like Codeforces and LeetCode.",
     icon: "puzzle",
   },
   {
     title: "Web Development",
-    description: "Creating modern, responsive web applications using React, Node.js, and other cutting-edge technologies.",
+    description:
+      "Creating modern, responsive web applications using React, Node.js, and other cutting-edge technologies.",
     icon: "globe",
   },
   {
@@ -84,7 +88,8 @@ export const experience = [
     title: "Computer Science Student",
     company: "Daffodil International University",
     period: "2020 - Present",
-    description: "Pursuing B.Sc. in Computer Science and Engineering with focus on Machine Learning, Algorithms, and Software Development.",
+    description:
+      "Pursuing B.Sc. in Computer Science and Engineering with focus on Machine Learning, Algorithms, and Software Development.",
     highlights: [
       "Active member of programming clubs",
       "Participated in multiple hackathons",
@@ -97,7 +102,8 @@ export const projects = [
   {
     id: 1,
     title: "Student Management System",
-    description: "A comprehensive Java-based student management system with full CRUD operations, file handling, and intuitive GUI using Swing.",
+    description:
+      "A comprehensive Java-based student management system with full CRUD operations, file handling, and intuitive GUI using Swing.",
     tags: ["Java", "Swing", "OOP", "File I/O"],
     category: "web",
     github: "https://github.com/mostafizcse007/Student-Management-System-JAVA",
@@ -106,7 +112,8 @@ export const projects = [
   {
     id: 2,
     title: "Krishisheba - Smart Agriculture",
-    description: "AI-powered agricultural assistance platform providing disease detection, weather forecasts, and expert agricultural advice for farmers.",
+    description:
+      "AI-powered agricultural assistance platform providing disease detection, weather forecasts, and expert agricultural advice for farmers.",
     tags: ["Python", "ML", "TensorFlow", "React"],
     category: "ml",
     github: "https://github.com/mostafizcse007/krishisheba",
@@ -115,7 +122,8 @@ export const projects = [
   {
     id: 3,
     title: "Machine Learning Archives",
-    description: "Comprehensive collection of ML implementations including regression, classification, clustering, and deep learning models.",
+    description:
+      "Comprehensive collection of ML implementations including regression, classification, clustering, and deep learning models.",
     tags: ["Python", "TensorFlow", "Scikit-learn", "Keras"],
     category: "ml",
     github: "https://github.com/mostafizcse007/Machine-Learning-Archives",
@@ -124,7 +132,8 @@ export const projects = [
   {
     id: 4,
     title: "DSA in C++",
-    description: "Complete data structures and algorithms implementation in C++ with detailed explanations and complexity analysis.",
+    description:
+      "Complete data structures and algorithms implementation in C++ with detailed explanations and complexity analysis.",
     tags: ["C++", "Algorithms", "Data Structures"],
     category: "dsa",
     github: "https://github.com/mostafizcse007/DSA-CPP",
@@ -133,7 +142,8 @@ export const projects = [
   {
     id: 5,
     title: "Python for Machine Learning",
-    description: "Beginner-friendly Python tutorials and implementations for machine learning concepts with practical examples.",
+    description:
+      "Beginner-friendly Python tutorials and implementations for machine learning concepts with practical examples.",
     tags: ["Python", "ML", "Tutorial"],
     category: "ml",
     github: "https://github.com/mostafizcse007/Python-for-ML",
