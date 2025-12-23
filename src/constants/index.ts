@@ -63,8 +63,6 @@ export const technologies = {
     { name: "Python", level: 95 },
     { name: "C++", level: 90 },
     { name: "Java", level: 85 },
-    { name: "JavaScript", level: 80 },
-    { name: "TypeScript", level: 75 },
   ],
   mlAi: [
     { name: "TensorFlow", level: 90 },
