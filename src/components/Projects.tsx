@@ -37,8 +37,8 @@ const Projects = () => {
       } : {}} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <span className="text-primary font-body text-sm tracking-widest uppercase">
-            Portfolio
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary border border-border font-mono text-xs text-primary">
+            {"// portfolio.json"}
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
             Featured <span className="text-gradient">Projects</span>

@@ -109,8 +109,8 @@ const Contact = () => {
       } : {}} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <span className="text-primary font-body text-sm tracking-widest uppercase">
-            Get In Touch
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary border border-border font-mono text-xs text-primary">
+            {"// contact.ts"}
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
             Let's Work <span className="text-gradient">Together</span>
