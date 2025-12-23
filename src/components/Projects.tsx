@@ -82,7 +82,7 @@ const Projects = () => {
           delay: 0.1 + index * 0.1
         }} whileHover={{
           y: -10
-        }} className="group glass rounded-2xl overflow-hidden hover:shadow-card-hover transition-all duration-300 bg-primary-foreground">
+        }} className="group glass rounded-2xl overflow-hidden hover:shadow-card-hover transition-all duration-300 bg-card">
               {/* Project Header with Icon */}
               <div className="h-48 bg-gradient-card relative flex items-center justify-center">
                 <div className="w-20 h-20 rounded-2xl bg-secondary flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">

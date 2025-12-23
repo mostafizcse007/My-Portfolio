@@ -74,7 +74,7 @@ const Blog = () => {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col">
+              <div className="relative bg-card backdrop-blur-sm rounded-2xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col">
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium backdrop-blur-sm">
