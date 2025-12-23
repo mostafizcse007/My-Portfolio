@@ -120,7 +120,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto bg-inherit">
           {/* Contact Info */}
           <motion.div initial={{
           opacity: 0,
