@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Code } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Code, CheckCircle, AlertCircle } from "lucide-react";
 import { personalInfo, socialLinks } from "@/constants";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+import { emailjsConfig } from "@/config/emailjs";
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <Github size={20} />,
@@ -12,6 +14,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const Contact = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({
     name: "",
@@ -19,21 +22,77 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailConfigured, setEmailConfigured] = useState(
+    emailjsConfig.serviceId !== "YOUR_SERVICE_ID"
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+
+    // Validate inputs
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Please fill all fields",
+        description: "All fields are required to send a message.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!emailConfigured) {
+      // Demo mode - simulate success
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast({
+        title: "Demo Mode",
+        description: "EmailJS not configured. In production, your message would be sent!",
+      });
+      setFormData({ name: "", email: "", message: "" });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: personalInfo.name,
+        },
+        emailjsConfig.publicKey
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
