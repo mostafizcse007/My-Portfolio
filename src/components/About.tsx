@@ -45,7 +45,7 @@ const About = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-8 rounded-2xl bg-card"
+            className="p-8 rounded-2xl bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-glow"
           >
             <h3 className="text-2xl font-display font-semibold mb-6">Personal Journey</h3>
             <p className="text-muted-foreground font-body leading-relaxed mb-6">
@@ -84,7 +84,7 @@ const About = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="p-8 rounded-2xl bg-card"
+            className="p-8 rounded-2xl bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-glow"
           >
             <h3 className="text-2xl font-display font-semibold mb-6">Technical Skills</h3>
             <div className="space-y-4">
