@@ -96,7 +96,7 @@ export const projects = [
     title: "Student Management System",
     description:
       "A comprehensive Java-based student management system with full CRUD operations, file handling, and intuitive GUI using Swing.",
-    tags: ["Java", "C++", "file handling", "OOP", "File I/O"],
+    tags: ["C++", "file handling", "OOP", "File I/O"],
     category: "web",
     github: "https://github.com/mostafizcse007/Student-Management-System-JAVA",
     image: null,
