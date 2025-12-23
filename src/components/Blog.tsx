@@ -74,7 +74,7 @@ const Blog = () => {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className="relative bg-card backdrop-blur-sm rounded-2xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col">
+              <div className="relative bg-card rounded-2xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col">
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium backdrop-blur-sm">
@@ -85,7 +85,7 @@ const Blog = () => {
                 {/* Gradient Header */}
                 <div className="h-32 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent relative">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.15),transparent_70%)]" />
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-card/50 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-card to-transparent" />
                 </div>
 
                 {/* Content */}
