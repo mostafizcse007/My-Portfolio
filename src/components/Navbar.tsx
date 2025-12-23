@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/constants";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,6 +46,7 @@ const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
+          <ThemeToggle />
           <motion.a
             href="#contact"
             className="px-6 py-2.5 bg-gradient-primary text-primary-foreground rounded-full font-body text-sm font-medium"
@@ -84,9 +86,13 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
+              <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                <span className="text-muted-foreground font-body text-sm">Theme</span>
+                <ThemeToggle />
+              </div>
               <a
                 href="#contact"
-                className="px-6 py-3 bg-gradient-primary text-primary-foreground rounded-full font-body text-sm font-medium text-center mt-2"
+                className="px-6 py-3 bg-gradient-primary text-primary-foreground rounded-full font-body text-sm font-medium text-center mt-4"
                 onClick={() => setIsOpen(false)}
               >
                 Let's Talk
