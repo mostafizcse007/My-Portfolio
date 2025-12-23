@@ -9,6 +9,9 @@ const categories = [{
   id: "ml",
   name: "Machine Learning"
 }, {
+  id: "web",
+  name: "Web Development"
+}, {
   id: "dsa",
   name: "DSA"
 }];
@@ -57,21 +60,13 @@ const Projects = () => {
         duration: 0.5,
         delay: 0.2
       }} className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map(category => (
-            <motion.button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-2 rounded-full font-body text-sm transition-all ${
-                activeCategory === category.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:text-foreground"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+          {categories.map(category => <motion.button key={category.id} onClick={() => setActiveCategory(category.id)} className={`px-6 py-2 rounded-full font-body text-sm transition-all ${activeCategory === category.id ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground"}`} whileHover={{
+          scale: 1.05
+        }} whileTap={{
+          scale: 0.95
+        }}>
               {category.name}
-            </motion.button>
-          ))}
+            </motion.button>)}
         </motion.div>
 
         {/* Projects Grid */}
@@ -87,7 +82,7 @@ const Projects = () => {
           delay: 0.1 + index * 0.1
         }} whileHover={{
           y: -10
-        }} className="group glass rounded-2xl overflow-hidden hover:shadow-card-hover transition-all duration-300">
+        }} className="group glass rounded-2xl overflow-hidden hover:shadow-card-hover transition-all duration-300 bg-primary-foreground">
               {/* Project Header with Icon */}
               <div className="h-48 bg-gradient-card relative flex items-center justify-center">
                 <div className="w-20 h-20 rounded-2xl bg-secondary flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
