@@ -56,7 +56,7 @@ const Services = () => {
           transition: {
             duration: 0.2
           }
-        }} className="group glass p-8 rounded-2xl hover:shadow-card-hover transition-all duration-300 bg-card">
+        }} className="group p-8 rounded-2xl transition-all duration-300 bg-card hover:shadow-glow">
               <div className="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground mb-6 group-hover:shadow-glow transition-all duration-300">
                 {iconMap[service.icon]}
               </div>
