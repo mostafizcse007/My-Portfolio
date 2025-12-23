@@ -86,7 +86,7 @@ const Hero = () => {
           delay: 0.1
         }} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
             Hi, I'm{" "}
-            <span className="text-gradient">{personalInfo.name.split(" ")[0]}</span>
+            <span className="text-gradient">{personalInfo.name.split(" ").pop()}</span>
             <br />
             <span className="text-muted-foreground">{personalInfo.title}</span>
           </motion.h1>
