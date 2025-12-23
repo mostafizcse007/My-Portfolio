@@ -8,33 +8,33 @@
 
 @layer base {
   :root {
-    --background: 222 47% 95%;
-    --foreground: 222 47% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 222 40% 92%;
-    --card-foreground: 222 47% 15%;
+    --card: 210 40% 96%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 222 47% 95%;
-    --popover-foreground: 222 47% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 166 76% 47%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 166 76% 36%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 30% 90%;
-    --secondary-foreground: 222 47% 15%;
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 222 20% 88%;
-    --muted-foreground: 222 15% 50%;
+    --muted: 210 30% 92%;
+    --muted-foreground: 222 20% 40%;
 
-    --accent: 166 76% 47%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 166 76% 36%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 20% 85%;
-    --input: 222 20% 85%;
-    --ring: 166 76% 47%;
+    --border: 220 20% 82%;
+    --input: 220 20% 82%;
+    --ring: 166 76% 36%;
 
     --radius: 0.5rem;
 
@@ -42,16 +42,16 @@
     --navy: 222 47% 11%;
     --light-navy: 222 40% 16%;
     --lightest-navy: 222 35% 22%;
-    --slate: 222 15% 55%;
-    --light-slate: 222 15% 65%;
-    --lightest-slate: 222 15% 75%;
-    --green: 166 76% 47%;
+    --slate: 222 20% 40%;
+    --light-slate: 222 15% 55%;
+    --lightest-slate: 222 15% 70%;
+    --green: 166 76% 36%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(166 76% 47%) 0%, hsl(176 70% 45%) 100%);
-    --gradient-hero: radial-gradient(ellipse at 50% 0%, hsl(166 76% 47% / 0.08) 0%, transparent 50%);
+    --gradient-primary: linear-gradient(135deg, hsl(166 76% 36%) 0%, hsl(176 70% 40%) 100%);
+    --gradient-hero: radial-gradient(ellipse at 50% 0%, hsl(166 76% 36% / 0.1) 0%, transparent 50%);
 
-    --shadow-glow: 0 10px 30px -15px hsl(166 76% 47% / 0.3);
-    --shadow-card: 0 10px 30px -15px hsl(222 47% 11% / 0.15);
+    --shadow-glow: 0 10px 30px -15px hsl(166 76% 36% / 0.4);
+    --shadow-card: 0 10px 30px -15px hsl(222 47% 11% / 0.1);
 
     --font-display: 'Inter', -apple-system, system-ui, sans-serif;
     --font-body: 'Inter', -apple-system, system-ui, sans-serif;
