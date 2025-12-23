@@ -35,7 +35,7 @@ const Navbar = () => {
           className="text-primary font-mono text-xl font-bold"
           whileHover={{ scale: 1.05 }}
         >
-          {"<A />"}
+          Hello World!
         </motion.a>
 
         {/* Desktop Navigation */}
