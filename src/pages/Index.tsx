@@ -14,6 +14,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Prevent scrolling during loading
     if (isLoading) {
       document.body.style.overflow = "hidden";
     } else {
@@ -26,7 +27,7 @@ const Index = () => {
   }, [isLoading]);
 
   return (
-    <div className="min-h-screen min-h-[100dvh] bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background">
       <AnimatePresence mode="wait">
         {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
@@ -35,7 +36,7 @@ const Index = () => {
         <>
           <Navbar />
           <SocialSidebar />
-          <main className="px-0 lg:px-12 xl:px-24">
+          <main className="lg:px-24">
             <Hero />
             <About />
             <Services />

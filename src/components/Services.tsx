@@ -41,13 +41,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-24 lg:py-32" ref={ref}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-24">
+    <section id="services" className="py-24 lg:py-32" ref={ref}>
+      <div className="container mx-auto px-6 lg:px-24">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="section-heading max-w-2xl text-xl sm:text-2xl md:text-3xl"
+          className="section-heading max-w-2xl"
         >
           <span className="numbered-heading">02.</span>
           What I Do
@@ -57,15 +57,15 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-col md:flex-row gap-4 sm:gap-8"
+          className="flex flex-col md:flex-row gap-8"
         >
           {/* Tabs */}
-          <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-muted scrollbar-hide">
+          <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-muted">
             {experiences.map((exp, index) => (
               <button
                 key={exp.company}
                 onClick={() => setActiveTab(index)}
-                className={`px-4 sm:px-5 py-2 sm:py-3 font-mono text-xs sm:text-sm whitespace-nowrap text-left transition-colors relative shrink-0 ${
+                className={`px-5 py-3 font-mono text-sm whitespace-nowrap text-left transition-colors relative ${
                   activeTab === index
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-primary hover:bg-primary/5"
@@ -74,7 +74,7 @@ const Services = () => {
                 {activeTab === index && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute left-0 md:left-0 bottom-0 md:bottom-auto md:top-0 h-0.5 md:h-full w-full md:w-0.5 bg-primary"
+                    className="absolute left-0 top-0 bottom-0 w-0.5 md:w-0.5 bg-primary"
                   />
                 )}
                 {exp.company}
@@ -83,21 +83,21 @@ const Services = () => {
           </div>
 
           {/* Content */}
-          <div className="min-h-[250px] sm:min-h-[300px] flex-1 pt-4 md:pt-0">
+          <div className="min-h-[300px] flex-1">
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-1">
+              <h3 className="text-xl font-semibold text-foreground mb-1">
                 {experiences[activeTab].title}
                 <span className="text-primary"> @ {experiences[activeTab].company}</span>
               </h3>
-              <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
+              <ul className="mt-6 space-y-4">
                 {experiences[activeTab].description.map((item, index) => (
-                  <li key={index} className="flex gap-3 text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                    <span className="text-primary mt-0.5 sm:mt-1">▹</span>
+                  <li key={index} className="flex gap-3 text-muted-foreground text-sm leading-relaxed">
+                    <span className="text-primary mt-1.5">▹</span>
                     {item}
                   </li>
                 ))}
