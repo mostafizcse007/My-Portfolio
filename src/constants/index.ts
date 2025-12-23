@@ -151,10 +151,68 @@ export const projects = [
   },
 ];
 
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Understanding Neural Networks: A Beginner's Guide",
+    excerpt: "Dive deep into the fundamentals of neural networks, from perceptrons to deep learning architectures.",
+    category: "Machine Learning",
+    date: "Dec 15, 2024",
+    readTime: "8 min read",
+    tags: ["Neural Networks", "Deep Learning", "Python"],
+  },
+  {
+    id: 2,
+    title: "Mastering Dynamic Programming in Competitive Coding",
+    excerpt: "Learn the art of breaking down complex problems into simpler subproblems with practical examples.",
+    category: "Algorithms",
+    date: "Dec 10, 2024",
+    readTime: "12 min read",
+    tags: ["DP", "Algorithms", "C++"],
+  },
+  {
+    id: 3,
+    title: "Building Scalable ML Pipelines with TensorFlow",
+    excerpt: "A comprehensive guide to creating production-ready machine learning pipelines that scale.",
+    category: "Machine Learning",
+    date: "Dec 5, 2024",
+    readTime: "10 min read",
+    tags: ["TensorFlow", "MLOps", "Python"],
+  },
+  {
+    id: 4,
+    title: "Graph Algorithms Every Developer Should Know",
+    excerpt: "From BFS to Dijkstra's algorithm - master the essential graph algorithms for technical interviews.",
+    category: "Algorithms",
+    date: "Nov 28, 2024",
+    readTime: "15 min read",
+    tags: ["Graphs", "Data Structures", "C++"],
+  },
+  {
+    id: 5,
+    title: "Computer Vision with OpenCV: Practical Applications",
+    excerpt: "Explore real-world computer vision applications using OpenCV and Python.",
+    category: "Computer Vision",
+    date: "Nov 20, 2024",
+    readTime: "9 min read",
+    tags: ["OpenCV", "Computer Vision", "Python"],
+  },
+  {
+    id: 6,
+    title: "Optimizing Code Performance: Tips and Tricks",
+    excerpt: "Learn how to write efficient code that runs faster and uses less memory.",
+    category: "Programming",
+    date: "Nov 15, 2024",
+    readTime: "7 min read",
+    tags: ["Optimization", "Performance", "Best Practices"],
+  },
+];
+
 export const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Projects", href: "#projects" },
+  { name: "Blog", href: "#blog" },
   { name: "Contact", href: "#contact" },
 ];
