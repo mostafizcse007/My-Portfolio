@@ -60,7 +60,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Resume
+            Download CV
           </motion.a>
         </div>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
                 className="px-8 py-3 border border-primary text-primary rounded font-mono text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Resume
+                Download CV
               </a>
             </div>
           </motion.div>
