@@ -58,7 +58,7 @@ const Skills = () => {
                     <span className="font-mono text-muted-foreground">{lang.name}</span>
                     <span className="text-primary font-mono text-sm">{lang.level}%</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-3 md:h-2 bg-muted rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${lang.level}%` }}
