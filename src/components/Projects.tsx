@@ -26,64 +26,47 @@ const Projects = () => {
         </motion.h2>
 
         {/* Featured Projects */}
-        <div className="space-y-24 mb-24">
+        <div className="grid md:grid-cols-2 gap-4 mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative grid lg:grid-cols-12 gap-4 items-center ${
-                index % 2 === 1 ? "lg:text-right" : ""
-              }`}
+              className="project-card group flex flex-col h-[280px] border-2 border-primary/20"
             >
-              {/* Project Image */}
-              <div
-                className={`lg:col-span-7 relative rounded overflow-hidden bg-primary/10 aspect-video ${
-                  index % 2 === 1 ? "lg:order-2 lg:col-start-6" : "lg:col-start-1"
-                }`}
-              >
-                <div className="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors duration-300 z-10" />
-                <div className="w-full h-full bg-card flex items-center justify-center">
-                  <Folder size={80} className="text-primary/30" />
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <Folder size={40} className="text-primary" />
+                  <span className="font-mono text-primary text-xs bg-primary/10 px-2 py-1 rounded">Featured</span>
                 </div>
-              </div>
-
-              {/* Project Content */}
-              <div
-                className={`lg:col-span-6 lg:absolute lg:top-1/2 lg:-translate-y-1/2 z-20 ${
-                  index % 2 === 1 ? "lg:left-0 lg:text-left" : "lg:right-0 lg:text-right"
-                }`}
-              >
-                <p className="font-mono text-primary text-sm mb-2">Featured Project</p>
-                <h3 className="text-2xl font-semibold text-foreground mb-4 hover:text-primary transition-colors">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    {project.title}
-                  </a>
-                </h3>
-                <div className="bg-card p-6 rounded shadow-card mb-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-                <ul className={`flex flex-wrap gap-3 font-mono text-xs text-muted-foreground mb-4 ${
-                  index % 2 === 1 ? "lg:justify-start" : "lg:justify-end"
-                }`}>
-                  {project.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-                <div className={`flex gap-4 ${index % 2 === 1 ? "lg:justify-start" : "lg:justify-end"}`}>
+                <div className="flex gap-3">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Github size={20} />
                   </a>
                 </div>
               </div>
+
+              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  {project.title}
+                </a>
+              </h3>
+
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+                {project.description}
+              </p>
+
+              <ul className="flex flex-wrap gap-2 tech-tag mt-auto">
+                {project.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
