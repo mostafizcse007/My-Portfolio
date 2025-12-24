@@ -92,30 +92,41 @@ const Navbar = () => {
               </button>
               
               {navItems.map((link, index) => (
-                <a
+                <motion.a
                   key={link.name}
                   href={link.href}
                   className="text-foreground hover:text-primary transition-colors font-mono text-lg"
                   onClick={() => setIsOpen(false)}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
                 >
                   <span className="text-primary block text-center text-sm mb-1">0{index + 1}.</span>
                   {link.name}
-                </a>
+                </motion.a>
               ))}
               
-              <div className="flex items-center gap-4 mt-4">
+              <motion.div 
+                className="flex items-center gap-4 mt-4"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
+              >
                 <ThemeToggle />
-              </div>
+              </motion.div>
               
-              <a
+              <motion.a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 border border-primary text-primary rounded font-mono text-sm"
                 onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.3 }}
               >
                 Download CV
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         )}
