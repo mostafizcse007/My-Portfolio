@@ -100,6 +100,8 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <span className="text-primary block text-center text-sm mb-1">0{index + 1}.</span>
                   {link.name}
@@ -111,6 +113,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.3 }}
+                whileHover={{ scale: 1.1 }}
               >
                 <ThemeToggle />
               </motion.div>
@@ -124,6 +127,8 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Download CV
               </motion.a>
