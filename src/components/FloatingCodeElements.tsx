@@ -19,11 +19,11 @@ const FloatingCodeElements = () => {
       {codeElements.map((element, index) => (
         <motion.span
           key={index}
-          className="absolute font-mono text-primary/20 text-lg md:text-2xl select-none"
+          className="absolute font-mono text-primary/40 text-lg md:text-2xl select-none"
           style={{ left: element.x, top: element.y }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{
-            opacity: [0.1, 0.3, 0.1],
+            opacity: [0.2, 0.5, 0.2],
             scale: [0.8, 1.2, 0.8],
             y: [0, -20, 0],
             rotate: [0, 10, -10, 0],
