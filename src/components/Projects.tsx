@@ -33,7 +33,8 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="project-card group flex flex-col h-[280px] border-2 border-primary/20"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="project-card group flex flex-col h-[280px] border-2 border-primary/20 cursor-pointer hover:border-primary/50 hover:shadow-glow transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -88,7 +89,8 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="project-card group flex flex-col h-[280px]"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="project-card group flex flex-col h-[280px] cursor-pointer hover:border-primary/30 hover:shadow-glow transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-6">
                 <Folder size={40} className="text-primary" />
