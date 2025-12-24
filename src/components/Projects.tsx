@@ -9,7 +9,7 @@ import krishiseba from "@/assets/projects/krishiseba.jpg";
 import machineLearning from "@/assets/projects/machine-learning.jpg";
 import dsaCpp from "@/assets/projects/dsa-cpp.jpg";
 import pythonMl from "@/assets/projects/python-ml.jpg";
-import basicC from "@/assets/projects/basic-c.jpg";
+import basicC from "@/assets/projects/basic-c.webp";
 
 const projectImages: Record<number, string> = {
   1: studentManagement,
