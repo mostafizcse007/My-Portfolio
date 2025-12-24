@@ -99,7 +99,7 @@ export const projects = [
     tags: ["C++", "file handling", "OOP", "File I/O"],
     category: "web",
     github: "https://github.com/mostafizcse007/Student-Management-System",
-    image: null,
+    image: "/src/assets/projects/student-management.jpg",
   },
   {
     id: 2,
@@ -109,7 +109,7 @@ export const projects = [
     tags: ["Java", "Springboot"],
     category: "ml",
     github: "https://github.com/mostafizcse007/krishiseba",
-    image: null,
+    image: "/src/assets/projects/krishiseba.jpg",
   },
   {
     id: 3,
@@ -119,7 +119,7 @@ export const projects = [
     tags: ["Python", "TensorFlow", "Scikit-learn", "Keras"],
     category: "ml",
     github: "https://github.com/mostafizcse007/Machine-Learning",
-    image: null,
+    image: "/src/assets/projects/machine-learning.jpg",
   },
   {
     id: 4,
@@ -129,7 +129,7 @@ export const projects = [
     tags: ["C++", "Algorithms", "Data Structures"],
     category: "dsa",
     github: "https://github.com/mostafizcse007/DSA-in-CPP",
-    image: null,
+    image: "/src/assets/projects/dsa-cpp.jpg",
   },
   {
     id: 5,
@@ -139,7 +139,7 @@ export const projects = [
     tags: ["Python", "ML", "Tutorial"],
     category: "ml",
     github: "https://github.com/mostafizcse007/Python-for-ML",
-    image: null,
+    image: "/src/assets/projects/python-ml.jpg",
   },
   {
     id: 6,
@@ -149,7 +149,7 @@ export const projects = [
     tags: ["C", "Programming", "Tutorial"],
     category: "programming",
     github: "https://github.com/mostafizcse007/Basic-C-Programming",
-    image: null,
+    image: "/src/assets/projects/basic-c.jpg",
   },
 ];
 
