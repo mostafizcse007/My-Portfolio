@@ -3,8 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
+import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SocialSidebar from "@/components/SocialSidebar";
@@ -39,8 +41,10 @@ const Index = () => {
           <main className="lg:px-24">
             <Hero />
             <About />
+            <Skills />
             <Services />
             <Projects />
+            <Blog />
             <Contact />
           </main>
           <Footer />
