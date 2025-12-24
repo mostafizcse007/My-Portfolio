@@ -45,7 +45,7 @@ const Hero = () => {
   }, [displayedText, isTyping, currentIndex]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-28 md:pt-20">
       <FloatingCodeElements />
       <div className="container mx-auto px-6 lg:px-24 relative z-10">
         <div className="max-w-4xl">
