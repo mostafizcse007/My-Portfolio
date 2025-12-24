@@ -36,29 +36,15 @@ const Loader = ({ onComplete }: { onComplete: () => void }) => {
           {/* Name */}
           <motion.text
             x="140"
-            y="45"
+            y="55"
             textAnchor="middle"
             fill="currentColor"
-            fontSize="14"
+            fontSize="24"
             fontFamily="monospace"
             fontWeight="bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
-          >
-            Mostafizur Rahman
-          </motion.text>
-          <motion.text
-            x="140"
-            y="65"
-            textAnchor="middle"
-            fill="currentColor"
-            fontSize="18"
-            fontFamily="monospace"
-            fontWeight="bold"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
           >
             Antu
           </motion.text>
