@@ -141,6 +141,16 @@ export const projects = [
     github: "https://github.com/mostafizcse007/Python-for-ML",
     image: null,
   },
+  {
+    id: 6,
+    title: "Basic-C-Programming",
+    description:
+      "Fundamental C programming tutorials covering basic syntax, control structures, functions, arrays, pointers, and file handling.",
+    tags: ["C", "Programming", "Tutorial"],
+    category: "programming",
+    github: "https://github.com/mostafizcse007/Basic-C-Programming",
+    image: null,
+  },
 ];
 
 export const blogPosts = [
