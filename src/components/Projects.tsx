@@ -105,7 +105,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="project-card group"
+              className="project-card group flex flex-col h-[280px]"
             >
               <div className="flex items-center justify-between mb-6">
                 <Folder size={40} className="text-primary" />
@@ -127,7 +127,7 @@ const Projects = () => {
                 </a>
               </h3>
 
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
                 {project.description}
               </p>
 
