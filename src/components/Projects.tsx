@@ -38,7 +38,7 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="section-heading"
         >
-          <span className="numbered-heading">03.</span>
+          <span className="numbered-heading">04.</span>
           Some Things I've Built
         </motion.h2>
 

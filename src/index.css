@@ -138,6 +138,7 @@
 
   .glass {
     background: hsl(var(--background) / 0.85);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid hsl(var(--border));
   }
@@ -173,6 +174,13 @@
 
   .tech-tag {
     @apply font-mono text-xs text-muted-foreground;
+  }
+}
+
+/* Explicit navbar visibility fallback for browsers with fingerprint protection */
+@media (min-width: 768px) {
+  .hidden.md\:flex {
+    display: flex !important;
   }
 }
 

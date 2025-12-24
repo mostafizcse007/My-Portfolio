@@ -110,6 +110,22 @@ const Navbar = () => {
                   {link.name}
                 </motion.a>
               ))}
+              
+              {/* Download CV Button for Mobile */}
+              <motion.a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 px-6 py-3 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
+                onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 + navItems.length * 0.1, duration: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Download CV
+              </motion.a>
             </div>
           </motion.div>
         )}

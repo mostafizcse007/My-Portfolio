@@ -103,7 +103,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="font-mono text-primary text-sm mb-4 text-center"
         >
-          <span className="numbered-heading">04.</span> What's Next?
+          <span className="numbered-heading">06.</span> What's Next?
         </motion.p>
 
         <motion.h2

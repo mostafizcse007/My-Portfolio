@@ -49,7 +49,7 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="section-heading max-w-2xl"
         >
-          <span className="numbered-heading">02.</span>
+          <span className="numbered-heading">03.</span>
           What I Do
         </motion.h2>
 
