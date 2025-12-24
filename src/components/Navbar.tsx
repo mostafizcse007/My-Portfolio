@@ -17,7 +17,7 @@ const Navbar = () => {
   }, []);
 
   const navItems = navLinks.filter(link => 
-    ["About", "Services", "Projects", "Contact"].includes(link.name)
+    ["About", "Skills", "Services", "Projects", "Blog", "Contact"].includes(link.name)
   );
 
   return (
