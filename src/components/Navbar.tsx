@@ -84,9 +84,9 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 w-1/2 max-w-[200px] h-screen bg-card shadow-2xl md:hidden z-50"
+            className="fixed top-0 right-0 w-3/5 max-w-[240px] h-screen bg-card shadow-2xl md:hidden z-50"
           >
-            <div className="flex flex-col items-center pt-24 h-full gap-4 p-6">
+            <div className="flex flex-col items-center pt-24 h-full gap-5 px-8 py-6">
               <button
                 className="absolute top-6 right-6 text-foreground"
                 onClick={() => setIsOpen(false)}
