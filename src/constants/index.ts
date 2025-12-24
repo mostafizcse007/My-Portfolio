@@ -108,7 +108,7 @@ export const projects = [
       "AI-powered agricultural assistance platform providing disease detection, weather forecasts, and expert agricultural advice for farmers.",
     tags: ["Java", "Springboot"],
     category: "ml",
-    github: "https://github.com/mostafizcse007/krishisheba",
+    github: "https://github.com/mostafizcse007/krishiseba",
     image: null,
   },
   {
