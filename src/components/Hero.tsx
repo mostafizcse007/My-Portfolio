@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { personalInfo } from "@/constants";
 import FloatingCodeElements from "./FloatingCodeElements";
 
+const tagline = "I build intelligent solutions.";
+
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
@@ -34,7 +36,24 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6"
           >
-            I build intelligent solutions.
+            {tagline.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.05, delay: 0.8 + index * 0.05 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity, delay: 0.8 + tagline.length * 0.05 }}
+              className="text-primary"
+            >
+              |
+            </motion.span>
           </motion.h2>
 
           <motion.p
