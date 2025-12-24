@@ -1,10 +1,49 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import { personalInfo } from "@/constants";
 import FloatingCodeElements from "./FloatingCodeElements";
 
-const tagline = "I build intelligent solutions.";
+const taglines = [
+  "I build intelligent solutions.",
+  "I solve complex problems.",
+  "I create ML models.",
+  "I love algorithms.",
+  "I write clean code.",
+];
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const currentTagline = taglines[currentIndex];
+    
+    if (isTyping) {
+      if (displayedText.length < currentTagline.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(currentTagline.slice(0, displayedText.length + 1));
+        }, 80);
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+        return () => clearTimeout(timeout);
+      }
+    } else {
+      if (displayedText.length > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(displayedText.slice(0, -1));
+        }, 40);
+        return () => clearTimeout(timeout);
+      } else {
+        setCurrentIndex((prev) => (prev + 1) % taglines.length);
+        setIsTyping(true);
+      }
+    }
+  }, [displayedText, isTyping, currentIndex]);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       <FloatingCodeElements />
@@ -34,22 +73,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6 h-[1.2em]"
           >
-            {tagline.split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.05, delay: 0.8 + index * 0.05 }}
-              >
-                {char}
-              </motion.span>
-            ))}
+            {displayedText}
             <motion.span
-              initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 0.8, repeat: Infinity, delay: 0.8 + tagline.length * 0.05 }}
+              transition={{ duration: 0.8, repeat: Infinity }}
               className="text-primary"
             >
               |
