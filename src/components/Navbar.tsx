@@ -83,7 +83,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="fixed top-0 right-0 w-3/4 max-w-sm h-screen bg-card shadow-2xl md:hidden z-50"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-6 p-8">
+            <div className="flex flex-col items-center justify-center h-full gap-4 p-8">
               <button
                 className="absolute top-6 right-6 text-foreground"
                 onClick={() => setIsOpen(false)}
