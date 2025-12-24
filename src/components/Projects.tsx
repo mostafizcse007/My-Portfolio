@@ -107,7 +107,7 @@ const Projects = () => {
           Other Noteworthy Projects
         </motion.h3>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {otherProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -115,10 +115,10 @@ const Projects = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="project-card group flex flex-col overflow-hidden cursor-pointer hover:border-primary/30 hover:shadow-glow transition-all duration-300"
+              className="project-card group flex flex-col h-[280px] overflow-hidden cursor-pointer hover:border-primary/30 hover:shadow-glow transition-all duration-300"
             >
               {/* Project Thumbnail */}
-              <div className="relative h-36 overflow-hidden">
+              <div className="relative h-32 overflow-hidden flex-shrink-0">
                 <img
                   src={projectImages[project.id]}
                   alt={project.title}
@@ -132,24 +132,24 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="p-2 bg-background/80 backdrop-blur-sm rounded-full text-muted-foreground hover:text-primary hover:bg-background transition-colors"
                   >
-                    <Github size={16} />
+                    <Github size={18} />
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-base font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     {project.title}
                   </a>
                 </h3>
 
-                <p className="text-muted-foreground text-xs leading-relaxed mb-4 line-clamp-2 flex-grow">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2 flex-grow">
                   {project.description}
                 </p>
 
-                <ul className="flex flex-wrap gap-1.5 tech-tag mt-auto text-xs">
-                  {project.tags.slice(0, 3).map((tag) => (
+                <ul className="flex flex-wrap gap-2 tech-tag mt-auto">
+                  {project.tags.map((tag) => (
                     <li key={tag}>{tag}</li>
                   ))}
                 </ul>
