@@ -38,7 +38,7 @@ const Index = () => {
         <>
           <Navbar />
           <SocialSidebar />
-          <main className="lg:px-24">
+          <main className="px-6 md:px-12 lg:px-24">
             <Hero />
             <About />
             <Skills />
