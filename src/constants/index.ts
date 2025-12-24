@@ -98,7 +98,7 @@ export const projects = [
       "A comprehensive Java-based student management system with full CRUD operations, file handling, and intuitive GUI using Swing.",
     tags: ["C++", "file handling", "OOP", "File I/O"],
     category: "web",
-    github: "https://github.com/mostafizcse007/Student-Management-System-JAVA",
+    github: "https://github.com/mostafizcse007/Student-Management-System",
     image: null,
   },
   {
@@ -118,7 +118,7 @@ export const projects = [
       "Comprehensive collection of ML implementations including regression, classification, clustering, and deep learning models.",
     tags: ["Python", "TensorFlow", "Scikit-learn", "Keras"],
     category: "ml",
-    github: "https://github.com/mostafizcse007/Machine-Learning-Archives",
+    github: "https://github.com/mostafizcse007/Machine-Learning",
     image: null,
   },
   {
@@ -128,7 +128,7 @@ export const projects = [
       "Complete data structures and algorithms implementation in C++ with detailed explanations and complexity analysis.",
     tags: ["C++", "Algorithms", "Data Structures"],
     category: "dsa",
-    github: "https://github.com/mostafizcse007/DSA-CPP",
+    github: "https://github.com/mostafizcse007/DSA-in-CPP",
     image: null,
   },
   {
