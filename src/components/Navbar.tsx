@@ -53,7 +53,7 @@ const Navbar = () => {
           ))}
           <ThemeToggle />
           <motion.a
-            href="/resume.pdf"
+            href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 px-4 py-2 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
@@ -113,7 +113,7 @@ const Navbar = () => {
               
               {/* Download CV Button for Mobile */}
               <motion.a
-                href="/resume.pdf"
+                href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 px-6 py-3 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
