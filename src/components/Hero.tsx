@@ -1,126 +1,101 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import { personalInfo } from "@/constants";
-import FloatingCodeElements from "./FloatingCodeElements";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { heroIndexRows, identity, publicProfiles } from "@/data/profiles";
 
-const taglines = [
-  "I build intelligent solutions.",
-  "I solve complex problems.",
-  "I create ML models.",
-  "I love algorithms.",
-  "I write clean code.",
-];
-
-const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
-
-  useEffect(() => {
-    const currentTagline = taglines[currentIndex];
-    
-    if (isTyping) {
-      if (displayedText.length < currentTagline.length) {
-        const timeout = setTimeout(() => {
-          setDisplayedText(currentTagline.slice(0, displayedText.length + 1));
-        }, 80);
-        return () => clearTimeout(timeout);
-      } else {
-        const timeout = setTimeout(() => {
-          setIsTyping(false);
-        }, 2000);
-        return () => clearTimeout(timeout);
-      }
-    } else {
-      if (displayedText.length > 0) {
-        const timeout = setTimeout(() => {
-          setDisplayedText(displayedText.slice(0, -1));
-        }, 40);
-        return () => clearTimeout(timeout);
-      } else {
-        setCurrentIndex((prev) => (prev + 1) % taglines.length);
-        setIsTyping(true);
-      }
-    }
-  }, [displayedText, isTyping, currentIndex]);
-
+export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-28 md:pt-20">
-      <FloatingCodeElements />
-      <div className="container mx-auto px-6 lg:px-24 relative z-10">
-        <div className="max-w-4xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-mono text-primary mb-5 text-sm md:text-base"
-          >
-            Hi, my name is
-          </motion.p>
+    <section id="top" className="border-b border-hairline py-12 md:py-16">
+      <div className="container">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
+          {/* Left 7 columns: Editorial thesis statement & primary actions */}
+          <div className="lg:col-span-7">
+            <p className="mb-4 flex items-center gap-2 font-mono text-xs text-ink-secondary">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              <span>Daffodil International University · B.Sc. CSE (3rd Year)</span>
+            </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4"
-          >
-            Mostafizur Rahman
-            <br />
-            <span className="text-primary">Antu</span>.
-          </motion.h1>
+            <h1 className="hero-display mb-5 text-ink">
+              Building verifiable systems and noise-robust machine learning
+            </h1>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6 min-h-[2.5em] sm:min-h-[1.2em]"
-          >
-            {displayedText}
-            <motion.span
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 0.8, repeat: Infinity }}
-              className="text-primary"
-            >
-              |
-            </motion.span>
-          </motion.h2>
+            <p className="prose-measure mb-7 text-base leading-relaxed text-ink-secondary md:text-[17px]">
+              I am Mostafizur Rahman Antu, an undergraduate CSE researcher and engineer in Dhaka
+              focused on cross-script Bangla NLP robustness, leak-free medical imaging quality
+              control, and deterministic client-side ML instrumentation.
+            </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed mb-12"
-          >
-            I'm an {personalInfo.title} specializing in machine learning, algorithms, 
-            and building exceptional digital experiences. Currently focused on developing 
-            AI-powered solutions and solving complex problems through code.
-          </motion.p>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#research"
+                className="inline-flex h-11 items-center gap-2 rounded-control bg-accent px-5 text-sm font-medium text-[var(--accent-ink-on-fill)] hover:bg-accent-hover monograph-transition"
+              >
+                <span>Explore Research</span>
+                <ArrowDownRight size={16} strokeWidth={1.5} aria-hidden="true" />
+              </a>
+              <a
+                href={identity.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center gap-2 rounded-control border border-hairline-strong bg-surface px-5 text-sm font-medium text-ink hover:bg-surface-subtle monograph-transition"
+              >
+                <span>Resume</span>
+                <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-wrap gap-4"
+          {/* Right 5 columns: Hairline-ruled Verified Profile Index */}
+          <aside
+            aria-label="Verified profile index"
+            className="lg:col-span-5 rounded-panel border border-hairline bg-surface"
           >
-            <a
-              href="#projects"
-              className="px-7 py-4 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
-            >
-              Check out my work!
-            </a>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-4 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
-            >
-              Resume
-            </a>
-          </motion.div>
+            <div className="flex items-center justify-between border-b border-hairline bg-surface-subtle px-5 py-3">
+              <span className="font-mono text-xs font-medium text-ink">
+                Verified Profile Index
+              </span>
+              <span className="font-mono text-xs text-ink-secondary">{identity.location}</span>
+            </div>
+
+            <dl className="divide-y divide-hairline">
+              {heroIndexRows.map((row) => (
+                <div
+                  key={row.index}
+                  className="flex flex-col gap-1 px-5 py-3 text-sm sm:grid sm:grid-cols-12 sm:items-baseline sm:gap-2"
+                >
+                  <dt className="sm:col-span-5 flex items-baseline gap-2.5 text-ink-secondary">
+                    <span className="font-mono text-xs text-ink-muted tabular-nums">
+                      {row.index}
+                    </span>
+                    <span className="font-medium text-ink">{row.label}</span>
+                  </dt>
+                  <dd className="pl-6 sm:pl-0 sm:col-span-7 sm:text-right">
+                    <span className="block font-mono text-xs font-medium text-accent tabular-nums">
+                      {row.value}
+                    </span>
+                    <span className="block font-mono text-[11px] text-ink-muted tabular-nums">
+                      {row.detail}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-t border-hairline bg-surface-subtle px-5 py-3">
+              {publicProfiles.map((profile) => (
+                <a
+                  key={profile.name}
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-mono text-[11px] font-medium text-ink hover:text-accent monograph-transition whitespace-nowrap"
+                >
+                  <span>{profile.name}</span>
+                  <ArrowUpRight size={11} strokeWidth={1.5} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

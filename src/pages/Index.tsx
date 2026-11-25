@@ -1,57 +1,49 @@
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Services from "@/components/Services";
-import Projects from "@/components/Projects";
-import Blog from "@/components/Blog";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import SocialSidebar from "@/components/SocialSidebar";
-import Loader from "@/components/Loader";
+import { useCallback, useState } from "react";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { ResearchMonograph } from "@/components/ResearchMonograph";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { KaggleSection } from "@/components/KaggleSection";
+import { CompetitiveSection } from "@/components/CompetitiveSection";
+import { CapabilitiesEducation } from "@/components/CapabilitiesEducation";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
+import { Toast, type ToastMessage } from "@/components/Toast";
 
-const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
+export default function Index() {
+  const [toast, setToast] = useState<ToastMessage | null>(null);
 
-  useEffect(() => {
-    // Prevent scrolling during loading
-    if (isLoading) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+  const handleNotify = useCallback((next: Omit<ToastMessage, "id">) => {
+    setToast({ ...next, id: Date.now() });
+  }, []);
 
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isLoading]);
+  const handleDismiss = useCallback(() => {
+    setToast(null);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <AnimatePresence mode="wait">
-        {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
-      </AnimatePresence>
+    <div className="min-h-screen bg-paper text-ink">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:font-medium focus:text-[var(--accent-ink-on-fill)]"
+      >
+        Skip to content
+      </a>
 
-      {!isLoading && (
-        <>
-          <Navbar />
-          <SocialSidebar />
-          <main className="px-6 md:px-12 lg:px-24">
-            <Hero />
-            <About />
-            <Skills />
-            <Services />
-            <Projects />
-            <Blog />
-            <Contact />
-          </main>
-          <Footer />
-        </>
-      )}
+      <Header />
+
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <ResearchMonograph />
+        <ProjectsSection />
+        <KaggleSection />
+        <CompetitiveSection />
+        <CapabilitiesEducation />
+        <ContactSection onNotify={handleNotify} />
+      </main>
+
+      <Footer />
+      <Toast toast={toast} onDismiss={handleDismiss} />
     </div>
   );
-};
-
-export default Index;
+}
