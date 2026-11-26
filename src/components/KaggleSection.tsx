@@ -3,7 +3,7 @@ import { kaggleData } from "@/data/profiles";
 
 export function KaggleSection() {
   return (
-    <section id="kaggle" className="border-b border-hairline py-16 md:py-24">
+    <section id="kaggle" className="border-b border-hairline py-12 md:py-16">
       <div className="container">
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -45,7 +45,7 @@ export function KaggleSection() {
             <div className="rounded-panel border border-hairline bg-surface">
               <div className="flex items-center justify-between border-b border-hairline bg-surface-subtle px-5 py-3.5">
                 <h3 className="font-sans text-sm font-semibold text-ink">
-                  Top 5 Verified Bronze Notebooks
+                  Top 5 Bronze Notebooks
                 </h3>
                 <span className="font-mono text-xs text-ink-secondary tabular-nums">
                   {kaggleData.medals} · 83 Total Upvotes

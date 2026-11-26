@@ -18,9 +18,9 @@ export function Hero() {
             </h1>
 
             <p className="prose-measure mb-7 text-base leading-relaxed text-ink-secondary md:text-[17px]">
-              I am Mostafizur Rahman Antu, an undergraduate CSE researcher and engineer in Dhaka
-              focused on cross-script Bangla NLP robustness, leak-free medical imaging quality
-              control, and deterministic client-side ML instrumentation.
+              I am Mostafizur Rahman Antu, an undergraduate CSE student in Dhaka building
+              client-side ML tools, competitive programming systems, and noise-robust Bangla NLP
+              models.
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -43,14 +43,14 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right 5 columns: Hairline-ruled Verified Profile Index */}
+          {/* Right 5 columns: Hairline-ruled Profile Index */}
           <aside
-            aria-label="Verified profile index"
+            aria-label="Profile index"
             className="lg:col-span-5 rounded-panel border border-hairline bg-surface"
           >
             <div className="flex items-center justify-between border-b border-hairline bg-surface-subtle px-5 py-3">
               <span className="font-mono text-xs font-medium text-ink">
-                Verified Profile Index
+                Profile Index
               </span>
               <span className="font-mono text-xs text-ink-secondary">{identity.location}</span>
             </div>

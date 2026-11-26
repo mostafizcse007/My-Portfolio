@@ -22,7 +22,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline bg-paper/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-hairline bg-paper">
       <div className="container flex h-16 items-center justify-between gap-2 lg:gap-4">
         <a
           href="#top"

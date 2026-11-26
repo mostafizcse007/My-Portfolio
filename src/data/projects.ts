@@ -47,7 +47,7 @@ export const featuredProjects: FeaturedProject[] = [
       { label: "Memory Target", value: "4GB RAM · Zero Backend" },
     ],
     description:
-      "100% client-side glass-box ML/DL visual sandbox spanning 51 algorithms across 7 stages. Executes in background Web Workers using Float32Array TypedArrays at 60 FPS on 4GB RAM devices with zero backend. Includes a 3-Lens view (Intuition, KaTeX Math, PyTorch/Scikit-learn Code), direct canvas point editing, timeline scrubbing, and ghost boundaries.",
+      "A browser-based visual sandbox for exploring 51 machine learning and deep learning algorithms without a backend. Training and inference run in background Web Workers so you can edit data points on the canvas, scrub training timelines, and inspect intuition, math, and code side by side.",
     stack: ["React 19", "TypeScript", "Vite", "Web Workers", "HTML5 Canvas + SVG", "KaTeX"],
     links: [
       { label: "Live Sandbox", url: "https://mlcanvas.netlify.app", primary: true },
@@ -68,7 +68,7 @@ export const featuredProjects: FeaturedProject[] = [
       { label: "Matchmaking", value: "PL/pgSQL Elo + RLS" },
     ],
     description:
-      "Deterministic 1v1 competitive programming and counterexample duel platform built for an AI Native Hackathon. Features a 3-pane cockpit with Monaco Editor, an isolated Web Worker judge with a strict 500ms TLE kill switch, a 60 FPS Dual-Trace Canvas (useRef + requestAnimationFrame, zero React re-renders), Hack & Defend sabotage mode, and atomic PL/pgSQL Elo matchmaking with Supabase RLS.",
+      "A 1v1 competitive programming duel platform built for an AI Native Hackathon. It pairs a Monaco code editor with an isolated Web Worker judge, live dual-trace visualization, a Hack & Defend sabotage mode, and Elo matchmaking backed by Supabase.",
     stack: [
       "Next.js App Router",
       "TypeScript",
@@ -95,7 +95,7 @@ export const featuredProjects: FeaturedProject[] = [
       { label: "Shortcut Audit", value: "55.00% Linear Val" },
     ],
     description:
-      "Binary QC (Good vs. Poor) on 951 skull-stripped BraTS 2021 FLAIR volumes with synthetic motion, ghosting, Rician noise, and slice-dropout corruptions. Eliminated background-noise shortcuts (linear shortcut audit dropped to 55.00% validation accuracy). The proposed 3D ResNet + Cross-Attention architecture achieved 90.00% test accuracy (0.9078 ROC-AUC) and 90.56% balanced accuracy (0.9496 AUC) on a 120-volume multi-severity stress test on Kaggle 2× T4 GPUs.",
+      "Binary quality control on 951 BraTS 2021 FLAIR volumes with synthetic motion, ghosting, Rician noise, and slice-dropout artifacts. After auditing and removing a background-noise shortcut, a 3D ResNet with Cross-Attention reached 90.00% test accuracy and 0.9496 AUC on a multi-severity stress test.",
     stack: ["PyTorch", "3D ResNet", "Cross-Attention", "BraTS 2021", "GroupKFold"],
     links: [{ label: "Kaggle Profile", url: "https://www.kaggle.com/alsomostafiz", primary: true }],
   },
@@ -114,7 +114,7 @@ export const featuredProjects: FeaturedProject[] = [
       { label: "Stress Robustness", value: "JPEG Q=30 0.882 · 0.35× 0.862" },
     ],
     description:
-      "Ongoing thesis and DL/CV study evaluated on 11,668 balanced ellipse-masked faces across 7 AI generators. A Dual-Branch spatial + 2D-Fourier network with gated fusion (0.563M parameters, 5.58ms CPU inference) achieved 98.15% clean accuracy (0.9975 ROC-AUC) and the strongest robustness under JPEG Q=30 compression (0.882) and 0.35× downscaling (0.862).",
+      "Ongoing thesis and computer vision study on 11,668 balanced face images across seven AI generators. A compact dual-branch spatial and 2D-Fourier network with gated fusion reached 98.15% clean accuracy and held up strongly under heavy JPEG compression and downscaling.",
     stack: ["PyTorch", "2D FFT", "Gated Fusion", "Grad-CAM++", "Computer Vision"],
     links: [],
     internalStatus: "Ongoing Research · No Public Repo",
@@ -133,7 +133,7 @@ export const featuredProjects: FeaturedProject[] = [
       { label: "Clinical Flow", value: "Booking · Rx · Payments" },
     ],
     description:
-      "Academic semester project at Daffodil International University implementing separate patient and doctor portals, phone/email OTP authentication, appointment scheduling, digital prescription management, and payment tracking.",
+      "An academic semester project at Daffodil International University with separate portals for patients and doctors. It handles OTP login, appointment scheduling, digital prescriptions, and payment tracking.",
     stack: [
       "Patient & Doctor Portals",
       "OTP Authentication",

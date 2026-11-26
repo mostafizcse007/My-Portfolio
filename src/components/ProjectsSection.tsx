@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import {
   archiveRepositories,
   featuredProjects,
@@ -9,7 +9,6 @@ import {
 
 export function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("all");
-  const [archiveOpen, setArchiveOpen] = useState(false);
 
   const visibleProjects =
     selectedCategory === "all"
@@ -17,7 +16,7 @@ export function ProjectsSection() {
       : featuredProjects.filter((p) => p.categories.includes(selectedCategory));
 
   return (
-    <section id="projects" className="border-b border-hairline py-16 md:py-24">
+    <section id="projects" className="border-b border-hairline py-12 md:py-16">
       <div className="container">
         {/* Section header + category filter controls */}
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -155,88 +154,48 @@ export function ProjectsSection() {
           })}
         </div>
 
-        {/* Collapsible Repository Archive */}
-        <div className="mt-10 rounded-panel border border-hairline bg-surface">
-          <button
-            type="button"
-            onClick={() => setArchiveOpen((prev) => !prev)}
-            aria-expanded={archiveOpen}
-            aria-controls="repository-archive-table"
-            data-testid="archive-toggle"
-            className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left hover:bg-surface-subtle monograph-transition"
-          >
-            <div>
-              <span className="block font-sans text-sm font-semibold text-ink">
-                Repository Archive ({archiveRepositories.length} repositories)
-              </span>
-              <span className="block font-mono text-xs text-ink-secondary">
-                Foundational C++, Python, and exploratory coursework repositories
-              </span>
-            </div>
-            <span className="inline-flex items-center gap-1.5 rounded-control border border-hairline-strong bg-paper px-3 py-1.5 font-mono text-xs font-medium text-ink shrink-0">
-              <span>{archiveOpen ? "Collapse" : "Expand"}</span>
-              {archiveOpen ? (
-                <ChevronUp size={14} strokeWidth={1.5} aria-hidden="true" />
-              ) : (
-                <ChevronDown size={14} strokeWidth={1.5} aria-hidden="true" />
-              )}
+        {/* Directly visible Repository Archive grid */}
+        <div className="mt-10">
+          <div className="mb-4 flex items-baseline justify-between gap-4">
+            <h3 className="font-serif text-2xl text-ink">Repository Archive</h3>
+            <span className="font-mono text-xs text-ink-muted">
+              {archiveRepositories.length} repositories
             </span>
-          </button>
+          </div>
 
-          {archiveOpen && (
-            <div
-              id="repository-archive-table"
-              className="overflow-x-auto border-t border-hairline"
-            >
-              <table className="w-full min-w-[600px] border-collapse text-left">
-                <thead>
-                  <tr className="border-b border-hairline bg-surface-subtle">
-                    <th scope="col" className="px-5 py-2.5 font-mono text-xs font-medium text-ink">
-                      Repository
-                    </th>
-                    <th scope="col" className="px-5 py-2.5 font-mono text-xs font-medium text-ink">
-                      Language
-                    </th>
-                    <th scope="col" className="px-5 py-2.5 font-mono text-xs font-medium text-ink">
-                      Scope
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-2.5 text-right font-mono text-xs font-medium text-ink"
-                    >
-                      Source
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-hairline">
-                  {archiveRepositories.map((repo) => (
-                    <tr key={repo.name} className="bg-surface">
-                      <td className="px-5 py-3 font-mono text-xs font-medium text-ink whitespace-nowrap">
-                        {repo.name}
-                      </td>
-                      <td className="px-5 py-3">
-                        <span className="inline-block rounded-control border border-hairline bg-surface-subtle px-2 py-0.5 font-mono text-xs font-medium text-ink whitespace-nowrap">
-                          {repo.language}
-                        </span>
-                      </td>
-                      <td className="px-5 py-3 text-sm text-ink-secondary">{repo.summary}</td>
-                      <td className="px-5 py-3 text-right whitespace-nowrap">
-                        <a
-                          href={repo.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 font-mono text-xs font-medium text-accent hover:underline"
-                        >
-                          <span>GitHub</span>
-                          <ArrowUpRight size={13} strokeWidth={1.5} aria-hidden="true" />
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+          <div
+            id="repository-archive-grid"
+            className="grid grid-cols-1 gap-4 md:grid-cols-2"
+          >
+            {archiveRepositories.map((repo) => (
+              <div
+                key={repo.name}
+                className="flex flex-col justify-between gap-3 rounded-panel border border-hairline bg-surface p-5"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="font-mono text-sm font-medium text-ink">{repo.name}</span>
+                    <span className="rounded-control border border-hairline bg-surface-subtle px-2 py-0.5 font-mono text-xs font-medium text-ink whitespace-nowrap">
+                      {repo.language}
+                    </span>
+                  </div>
+                  <p className="text-sm text-ink-secondary leading-relaxed">{repo.summary}</p>
+                </div>
+
+                <div>
+                  <a
+                    href={repo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-mono text-xs font-medium text-accent hover:underline"
+                  >
+                    <span>GitHub</span>
+                    <ArrowUpRight size={13} strokeWidth={1.5} aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

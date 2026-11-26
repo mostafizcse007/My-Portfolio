@@ -70,7 +70,7 @@ export const heroIndexRows: IndexLedgerRow[] = [
   {
     index: "02",
     label: "Algorithms",
-    value: "507 Verified Solved",
+    value: "507 Solved",
     detail: "283 Codeforces · 224 LeetCode",
   },
   {
@@ -100,7 +100,7 @@ export const kaggleData = {
   peakRank: "2,142",
   medals: "5 Bronze",
   summaryStats: [
-    { label: "Tier Classification", value: "Notebooks Expert", sub: "Verified Kaggle progression" },
+    { label: "Tier Classification", value: "Notebooks Expert", sub: "Kaggle progression" },
     { label: "Global Standing", value: "2,462 / 57,080", sub: "Peak rank 2,142" },
     { label: "Notebook Medals", value: "5 Bronze", sub: "Peer-upvoted kernels" },
     { label: "Public Activity", value: "10 Notebooks", sub: "83 Upvotes · 111 Forks · 4 Competitions" },
@@ -146,7 +146,7 @@ export const kaggleData = {
 
 export const competitiveData = {
   totalSolved: 507,
-  summaryNote: "Verified total across Codeforces (283) and LeetCode (224).",
+  summaryNote: "Combined total across Codeforces (283) and LeetCode (224).",
   leetcode: {
     url: "https://leetcode.com/u/mostafizcse/",
     handle: "mostafizcse",

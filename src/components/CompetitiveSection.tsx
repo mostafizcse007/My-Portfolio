@@ -8,7 +8,7 @@ export function CompetitiveSection() {
   const hardPct = (leetcode.hard / leetcode.totalSolved) * 100;
 
   return (
-    <section id="competitive" className="border-b border-hairline py-16 md:py-24">
+    <section id="competitive" className="border-b border-hairline py-12 md:py-16">
       <div className="container">
         <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
@@ -16,7 +16,7 @@ export function CompetitiveSection() {
               Algorithmic Problem Solving
             </p>
             <h2 className="section-display text-ink tabular-nums">
-              {totalSolved} Verified Problems Solved
+              {totalSolved} Problems Solved
             </h2>
           </div>
           <p className="font-mono text-xs text-ink-secondary tabular-nums">{summaryNote}</p>
@@ -43,7 +43,7 @@ export function CompetitiveSection() {
 
             <div className="flex flex-wrap items-baseline justify-between gap-4">
               <div>
-                <p className="font-mono text-xs text-ink-muted">Verified Solved</p>
+                <p className="font-mono text-xs text-ink-muted">Problems Solved</p>
                 <p className="font-serif text-4xl text-ink tabular-nums">{leetcode.totalSolved}</p>
               </div>
               <div className="text-right">
@@ -104,7 +104,7 @@ export function CompetitiveSection() {
                 </p>
               </div>
               <div>
-                <p className="mb-1.5 font-mono text-xs text-ink-muted">Verified Badges</p>
+                <p className="mb-1.5 font-mono text-xs text-ink-muted">Badges</p>
                 <div className="flex flex-wrap gap-1.5">
                   {leetcode.badges.map((badge) => (
                     <span
@@ -146,25 +146,16 @@ export function CompetitiveSection() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-xs text-ink-muted">Rank Tier</p>
-                  <p className="font-mono text-sm font-medium text-ink">{codeforces.rankTier}</p>
+                  <p className="font-mono text-xs text-ink-muted">Longest Streak</p>
+                  <p className="font-serif text-3xl text-ink tabular-nums">
+                    {codeforces.longestStreak}
+                  </p>
                 </div>
               </div>
 
-              <dl className="grid grid-cols-2 gap-3">
-                <div className="rounded-control border border-hairline bg-surface-subtle p-3.5">
-                  <dt className="font-mono text-[11px] text-ink-secondary">Current / Max Rating</dt>
-                  <dd className="mt-1 font-mono text-sm font-medium text-ink tabular-nums">
-                    {codeforces.rating} / Max {codeforces.maxRating}
-                  </dd>
-                </div>
-                <div className="rounded-control border border-hairline bg-surface-subtle p-3.5">
-                  <dt className="font-mono text-[11px] text-ink-secondary">Longest Streak</dt>
-                  <dd className="mt-1 font-mono text-sm font-medium text-ink tabular-nums">
-                    {codeforces.longestStreak}
-                  </dd>
-                </div>
-              </dl>
+              <p className="font-mono text-xs text-ink-secondary tabular-nums">
+                Rating {codeforces.rating} (Max {codeforces.maxRating}) · {codeforces.rankTier}
+              </p>
             </div>
 
             <div className="border-t border-hairline pt-4">

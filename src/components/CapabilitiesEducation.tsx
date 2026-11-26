@@ -4,7 +4,7 @@ import { capabilityColumns, identity } from "@/data/profiles";
 
 export function CapabilitiesEducation() {
   return (
-    <section id="about" className="border-b border-hairline py-16 md:py-24">
+    <section id="about" className="border-b border-hairline py-12 md:py-16">
       <div className="container">
         <div className="mb-10">
           <p className="mb-2 font-mono text-xs text-ink-secondary">

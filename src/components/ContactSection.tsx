@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { ArrowUpRight, Check, Copy, Mail, MapPin, Phone, Send } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Mail, MapPin, Send } from "lucide-react";
 import { emailjsConfig } from "@/config/emailjs";
 import { identity, publicProfiles } from "@/data/profiles";
 import type { ToastMessage } from "./Toast";
@@ -113,7 +113,7 @@ export function ContactSection({ onNotify }: ContactSectionProps) {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-12 md:py-16">
       <div className="container">
         <div className="mb-10">
           <p className="mb-2 font-mono text-xs text-ink-secondary">Correspondence</p>
@@ -163,19 +163,6 @@ export function ContactSection({ onNotify }: ContactSectionProps) {
 
               <div className="p-5 space-y-1.5">
                 <div className="flex items-center gap-2 font-mono text-xs text-ink-muted">
-                  <Phone size={15} strokeWidth={1.5} aria-hidden="true" />
-                  <span>Phone</span>
-                </div>
-                <a
-                  href={`tel:${identity.phone.replace(/\s+/g, "")}`}
-                  className="block font-mono text-sm text-ink hover:text-accent monograph-transition"
-                >
-                  {identity.phone}
-                </a>
-              </div>
-
-              <div className="p-5 space-y-1.5">
-                <div className="flex items-center gap-2 font-mono text-xs text-ink-muted">
                   <MapPin size={15} strokeWidth={1.5} aria-hidden="true" />
                   <span>Location</span>
                 </div>
@@ -184,7 +171,7 @@ export function ContactSection({ onNotify }: ContactSectionProps) {
             </div>
 
             <div className="rounded-panel border border-hairline bg-surface p-5">
-              <p className="mb-3 font-mono text-xs text-ink-muted">Verified Profiles</p>
+              <p className="mb-3 font-mono text-xs text-ink-muted">Profiles</p>
               <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {publicProfiles.map((profile) => (
                   <li key={profile.name}>
@@ -327,7 +314,7 @@ export function ContactSection({ onNotify }: ContactSectionProps) {
 
               <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
                 <span className="font-mono text-xs text-ink-muted">
-                  Dispatched via EmailJS to {identity.name}
+                  Usually responds within 2–3 days.
                 </span>
                 <button
                   type="submit"
